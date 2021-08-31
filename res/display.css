@@ -1,0 +1,236 @@
+body{
+    background: #9FFFCB;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #004E64;
+    transition: 1s;
+    justify-content: center;
+}
+#time{
+    display: flex;
+    flex-direction: column;
+    background: #9FFFCB;
+    padding: 10px 20px;
+    width: 30%;
+}
+#time .top{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+}
+#time .top h2{
+    min-width: max-content;
+    margin: 20px 0;
+    margin-right: 10px;
+}
+.line{
+    display: inline-block;
+    height: 1px;
+    width: 100%;
+    background: #004E64;
+}
+#time .top .buttons{
+    display: flex;
+    flex-direction: row;
+    margin-left: 10px;
+}
+#time .top .buttons button{
+    background: #fff8;
+    outline: none;
+    border: none;
+    margin: 0 2px;
+    border-radius: 10px;
+}
+#time .main{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0;
+    padding: 20px 15%;
+    height: 100%;
+}
+#time .main .tw{
+    position: relative;
+    width: 20px;
+    height: 100%;
+    background: #fffa;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+#time .main .tw .top{
+    top: -20px;
+}
+#time .main .tw .bottom{
+    bottom: -20px;
+}
+#time .main .tw h5{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    min-width: max-content;
+    transform: translateX(-50%);
+}
+#time .main .tw .spent{
+    background: #00f;
+    position: absolute;
+    width: 100%;
+    overflow: visible;
+    border-radius: 4px;
+    transition: 0.5s;
+}
+#time .main .tw .spent .span-title{
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    transform: translateY(-50%);
+    color:#fff;
+    font-size: 2vh;
+    font-weight: bolder;
+    transition: 0.5s;
+    margin-right: 10px;
+}
+#time .main .tw .spent:hover .span-title{
+    transform: translate(-5px, -50%);
+    margin-right: 50px;
+}
+#time .main .tw .spent:hover{
+    background: #fffe;
+    box-shadow: 0 0 2px 3px #fffe;
+    z-index: 99;
+}
+
+#time .main .tw .spent .show-time{
+    position: absolute;
+    color:#fff;
+    font-size: 0.8em;
+    min-width: max-content;
+    opacity: 0;
+    transition: 0.5s;
+    font-weight: bolder;
+}
+#time .main .tw .spent:hover *{
+    background: #fffe;
+    padding: 3px;
+    border-radius: 5px;
+    z-index: 99;
+    opacity: 1;
+}
+#dash{
+    background: #25A18E;
+    padding: 20px;
+    max-width: 70%;
+    width: 500px;
+    height: 500px;
+    border-radius: 130% 100% 200% 150%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto 20px;
+
+}
+#dash .top-bar{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 20px;
+}
+#dash h2{
+    margin: 0;
+    padding: 0;
+    color:#7AE582;
+    font-weight: lighter;
+}
+#dash a{
+    margin-left: 50px;
+    text-decoration: none;
+    color:#7AE582;
+}
+#dash .stuff{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#dash .stuff .input{
+    display: flex;
+    flex-direction: row;
+}
+#dash .stuff .input button{
+    display: flex;
+    flex-direction: row;
+    margin-left: 10px;
+    background: #4fff5b;
+    outline: none;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+#dash .stuff .input button:hover:not([disabled]){
+    background: #8bfd92;
+}
+input {
+    background: #fffa;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+.tags{
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.tags .tag{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: #fff;
+    border-radius: 18px;
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: pointer;
+}
+.tags .tag:hover{
+    background: #affa;
+}
+.tags .tag::selection{
+    background: none;
+}
+.tags .tag .tag-title::selection{
+    background: none;
+}
+@media only screen and (max-width: 800px){
+    body{
+        flex-wrap: wrap;
+        overflow-x: hidden;
+    }
+    #time{
+        width: calc( 100% - 40px);
+        height: 90vh;
+    }
+    #dash{
+        max-width: 100vw;
+        width: calc( 100% - 40px);
+        height: 90vh;
+        border-radius: 0;
+        display: flex;
+        justify-content:flex-start;
+        align-items: center;
+        flex-direction: column;
+        margin: 0;
+    }
+    #time .main .tw .spent .show-time{
+        font-size: 0.6em;
+    }
+    #time .main .tw .spent .span-title{
+        font-size: 1em;
+    }
+}
